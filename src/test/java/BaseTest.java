@@ -2,6 +2,10 @@ import framework.TestData;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+/**
+ * Created by Senthil kumar
+ */
+
 public class BaseTest extends TestData{
 
     @BeforeMethod

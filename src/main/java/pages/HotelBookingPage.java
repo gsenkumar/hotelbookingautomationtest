@@ -7,6 +7,10 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+/**
+ * Created by Senthil kumar
+ */
+
 public class HotelBookingPage extends WebBrowser {
 
     @FindBy(how = How.ID, using = "firstname")

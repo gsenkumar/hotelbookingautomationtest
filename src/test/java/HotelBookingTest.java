@@ -1,6 +1,10 @@
 import org.testng.annotations.Test;
 import pages.HotelBookingPage;
 
+/**
+ * Created by Senthil kumar
+ */
+
 public class HotelBookingTest extends BaseTest {
 
     HotelBookingPage hotelbookingpage = new HotelBookingPage();

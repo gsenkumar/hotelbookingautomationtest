@@ -4,6 +4,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Created by Senthil kumar
+ */
+
 public class WebBrowser extends TestData {
 
     public static WebDriver driver;

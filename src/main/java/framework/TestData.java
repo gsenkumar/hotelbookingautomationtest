@@ -2,6 +2,10 @@ package framework;
 
 import org.testng.annotations.DataProvider;
 
+/**
+ * Created by Senthil kumar
+ */
+
 public class TestData {
 
     String TEST_URL = "http://hotel-test.equalexperts.io/";
