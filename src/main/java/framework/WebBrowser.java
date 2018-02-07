@@ -14,8 +14,7 @@ public class WebBrowser extends TestData {
 
     public WebDriver driver() {
         driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.get(TEST_URL);
+        navigateTo(TEST_URL);
         driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
         driver.manage().timeouts().pageLoadTimeout(3000, TimeUnit.MILLISECONDS);
         return driver;
@@ -33,21 +32,16 @@ public class WebBrowser extends TestData {
     public static void getWebdriverWait() throws InterruptedException {
         Thread.sleep(5000);
     }
-    public static String getTitle() {
-        return driver.getTitle();
+    public static void getTitle() {
+        System.out.println("Title of the Page -> "+driver.getTitle());
     }
 
-    public static String getCurrentUrl() {
-        return driver.getCurrentUrl();
+    public static void pageRefresh() {
+        driver.navigate().refresh();
     }
 
-    public boolean isElementPresentOnScreen(By locator) {
-        try {
-            driver().findElement(locator);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
+    public static void getCurrentUrl() {
+        System.out.println("Navigate to Current URL -> "+driver.getCurrentUrl());
     }
 
 }

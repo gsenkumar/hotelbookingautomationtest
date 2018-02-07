@@ -1,6 +1,9 @@
+package test;
+
 import framework.TestData;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import framework.WebBrowser;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 /**
  * Created by Senthil kumar
@@ -8,13 +11,16 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest extends TestData{
 
-    @BeforeMethod
+    @BeforeTest
     public static void beforeTest() {
         System.out.println("Hotel Booking Test Started");
+        WebBrowser.getCurrentUrl();
+        WebBrowser.getTitle();
     }
 
-    @AfterMethod
+    @AfterTest
     public static void afterTest() {
         System.out.println("Hotel Booking Test finished");
+        WebBrowser.closeBrowser();
     }
 }

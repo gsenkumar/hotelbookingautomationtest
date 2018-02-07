@@ -1,6 +1,7 @@
 package pages;
 
 import framework.WebBrowser;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -34,20 +35,27 @@ public class HotelBookingPage extends WebBrowser {
     @FindBy(how = How.CSS, using = "input[value=' Save ']")
     private WebElement saveButtonElement;
 
+    String rowCountElement = "div#bookings div.row";
+
+    //div#bookings > div:nth-of-type(19)
+
     public HotelBookingPage() {
         this.driver();
         PageFactory.initElements(driver, this);
     }
 
     public void enterFirstName(String firstname) {
+        firstNameElement.clear();
         firstNameElement.sendKeys(firstname);
     }
 
     public void enterSurName(String surtname) {
+        surNameElement.clear();
         surNameElement.sendKeys(surtname);
     }
 
     public void enterTotalPrice(String totalprice) {
+        totalPriceElement.clear();
         totalPriceElement.sendKeys(totalprice);
     }
 
@@ -57,10 +65,12 @@ public class HotelBookingPage extends WebBrowser {
     }
 
     public void enterCheckInDate(String checkindate) {
+        checkInElement.clear();
         checkInElement.sendKeys(checkindate);
     }
 
     public void enterCheckOutDate(String checkoutdate) {
+        checkOutElement.clear();
         checkOutElement.sendKeys(checkoutdate);
     }
 
@@ -68,5 +78,17 @@ public class HotelBookingPage extends WebBrowser {
         saveButtonElement.click();
     }
 
+    public int numberOfRowsPresent() throws InterruptedException {
+        WebBrowser.getWebdriverWait();
+        int numbers = driver.findElements(By.cssSelector(rowCountElement)).size();
+        System.out.println("Total number of Rows -"+numbers);
+        return numbers;
+    }
+
+    public void deleteLastRow() throws InterruptedException {
+        int existingRows = numberOfRowsPresent();
+        String lastestRow = "div#bookings > div:nth-of-type("+(existingRows)+") > div:nth-of-type(7)";
+        driver.findElement(By.cssSelector(lastestRow)).click();
+    }
 
 }
