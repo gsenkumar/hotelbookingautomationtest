@@ -37,8 +37,6 @@ public class HotelBookingPage extends WebBrowser {
 
     String rowCountElement = "div#bookings div.row";
 
-    //div#bookings > div:nth-of-type(19)
-
     public HotelBookingPage() {
         this.driver();
         PageFactory.initElements(driver, this);

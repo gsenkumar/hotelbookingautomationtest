@@ -10,6 +10,7 @@ public class HotelBookingPageTest {
 
     HotelBookingPage hotelbookingpage = new HotelBookingPage();
 
+    // To enter all input for a row entry
     public void enterAllValidInput(String firstname,
                                    String surname,
                                    String price,
@@ -25,10 +26,12 @@ public class HotelBookingPageTest {
         hotelbookingpage.clickSaveButton();
     }
 
+    // To find total number of rows at present
     public int rowsPresent() throws InterruptedException {
         return hotelbookingpage.numberOfRowsPresent();
     }
 
+    // To validate a row is added to exist list
     public void rowsValidation(int present, int lastest) throws InterruptedException {
         if((present+1) == lastest){
             System.out.println("One Row Entered Successful in Hotel Booking System");
@@ -37,10 +40,12 @@ public class HotelBookingPageTest {
         }
     }
 
+    //To delete last row
     public void deleteLastRow() throws InterruptedException{
         hotelbookingpage.deleteLastRow();
     }
 
+    // To validate a row is deleted from the list
     public void lastRowDeleteValidation(int present, int lastest) throws InterruptedException {
         if((present-1) == lastest){
             System.out.println("One Row Deleted Successful in Hotel Booking System");

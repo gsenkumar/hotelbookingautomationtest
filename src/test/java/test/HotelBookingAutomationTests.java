@@ -11,7 +11,7 @@ public class HotelBookingAutomationTests extends BaseTest {
 
     private HotelBookingPageTest hotelbookingpagetest = new HotelBookingPageTest();
 
-    @Test(priority=1, description = "Hotel Booking - Test Scenario 01 - All valid input", dataProvider = "hotelbookingallvalidentry")
+    @Test(priority=1, description = "Hotel Booking - Test Scenario 01 - All valid input", dataProvider = "hotelbookingallvalidentry", enabled = true)
     public void testHotelBookingWithAllValidInput(String firstname,
                                                   String surname,
                                                   String price,
@@ -32,7 +32,7 @@ public class HotelBookingAutomationTests extends BaseTest {
         System.out.println("-----------------------------------------------------------------------------------");
     }
 
-    @Test(priority=2, description = "Hotel Booking - Test Scenario 02 - Check-out date less than Check-in date", dataProvider = "hotelbookingentrywithdatevariation")
+    @Test(priority=2, description = "Hotel Booking - Test Scenario 02 - Check-out date less than Check-in date", dataProvider = "hotelbookingentrywithdatevariation", enabled = true)
     public void testHotelBookingWithDateVariation (String firstname,
                                                   String surname,
                                                   String price,
@@ -53,7 +53,7 @@ public class HotelBookingAutomationTests extends BaseTest {
         System.out.println("-----------------------------------------------------------------------------------");
     }
 
-    @Test(priority=3, description = "Hotel Booking - Test Scenario 03 - All Special characters", dataProvider = "hotelbookingallspecialcharentry")
+    @Test(priority=3, description = "Hotel Booking - Test Scenario 03 - All Special characters", dataProvider = "hotelbookingallspecialcharentry", enabled = true)
     public void testHotelBookingWithAllSpecialChars (String firstname,
                                                   String surname,
                                                   String price,
@@ -75,7 +75,7 @@ public class HotelBookingAutomationTests extends BaseTest {
     }
 
     //
-    @Test(priority=4, description = "Hotel Booking - Test Scenario 04 - All Numeric values", dataProvider = "hotelbookingallnumericentry")
+    @Test(priority=4, description = "Hotel Booking - Test Scenario 04 - All Numeric values", dataProvider = "hotelbookingallnumericentry", enabled = true)
     public void testHotelBookingWithAllNumeric (String firstname,
                                                   String surname,
                                                   String price,
@@ -96,7 +96,7 @@ public class HotelBookingAutomationTests extends BaseTest {
         System.out.println("-----------------------------------------------------------------------------------");
     }
 
-    @Test(priority=5, description = "Hotel Booking - Test Scenario 05 - Last Row Deleted")
+    @Test(priority=5, description = "Hotel Booking - Test Scenario 05 - Last Row Deleted", enabled = true)
     public void testDeleteLastRow () throws InterruptedException {
         System.out.println("-----------------------------------------------------------------------------------");
         System.out.println("Test Scenario 5 - Last Row Deletion");

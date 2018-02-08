@@ -26,7 +26,7 @@ public class TestData {
         };
     }
 
-    // Test Data with All Valid details
+    // Test Data with All Special Characters
     @DataProvider(name = "hotelbookingallspecialcharentry")
     public Object[][] hotelBookingDetails_tc3() {
         return new Object[][] {
@@ -34,6 +34,7 @@ public class TestData {
         };
     }
 
+    // Test Data with All Numeric
     @DataProvider(name = "hotelbookingallnumericentry")
     public Object[][] hotelBookingDetails_tc4() {
         return new Object[][] {
